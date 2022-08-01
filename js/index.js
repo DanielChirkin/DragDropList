@@ -61,6 +61,9 @@ function createListItems() {
 // listeners
 function dragStart(e) {
   startIndex = this.closest('.draggable-list-item').getAttribute('data-index')
+  this.style.opacity = '0.5'
+  const dt = e.dataTransfer
+  dt.effectAllowed = 'move'
 
   itemsList.forEach(item => {
     item.classList.remove('item-body--wrong')
@@ -69,11 +72,15 @@ function dragStart(e) {
 }
 function dragEnd() {
   if ( !oldElement ) return
+
+  this.style.opacity = '1'
   oldElement.element.classList.remove('item-body--over')
   startIndex = undefined
 }
 
 function drop(e) {
+  if ( !startIndex ) return
+
   endIndex = this.getAttribute('data-index')
 
   swap(startIndex, endIndex)
@@ -91,7 +98,6 @@ function dragEnter(e) {
   }
   
   if ( oldElement.index !== this.getAttribute('data-index') ) {
-    console.log('yes');
     oldElement.element.classList.remove('item-body--over')
     this.classList.add('item-body--over')
 
@@ -135,7 +141,6 @@ document.querySelector('#check-btn').addEventListener('click', e => {
 
     itemsList.forEach( (item, index) => {
       const name  = item.querySelector('.name span').innerText.trim() // trim removes white spaces from the end and from beginning of the string
-      console.log(name);
 
       if ( name === wealthiestPeopleList[index].name ) {
         item.classList.add('item-body--correct')
