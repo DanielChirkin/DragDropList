@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="https://kit.fontawesome.com/05acc7dd97.js" crossorigin="anonymous"></script>
+  <title>Drag-n-Drop-list</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="content">
+      <h1 class="title">The World's wealthiest people in 2022</h1>
+      <div class="container">
+        <div class="description">
+          <p>Place them into their corresponding order</p>
+          <div class="prompts">
+            <i class="fa-solid fa-circle-question"></i>
+            prompts
+            <label for="checkbox-input" class="checkbox">
+              <input type="checkbox" id="checkbox-input">
+              <span class="checkbox-mark"></span>
+            </label>
+          </div>
+        </div>
+        <ul class="draggable-list" id="draggable-list"></ul>
+        <button class="check-btn" id="check-btn">
+          Check order
+          <i class="fa-solid fa-circle-check"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/index.js"></script>
+</body>
+</html>

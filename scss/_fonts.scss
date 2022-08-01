@@ -1,0 +1,36 @@
+$font-path: "../fonts/Khand";
+$font-family: 'Khand';
+
+
+@font-face {
+  font-family: $font-family;
+  font-weight: 300;
+  font-style: normal;
+  src:  local($font-family),
+        url('#{$font-path}/#{$font-family}-Light.woff2') format('woff2'),
+        url('#{$font-path}/#{$font-family}-Light.woff') format('woff'),
+        url('#{$font-path}/#{$font-family}-Light.eot') format('eot');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-family;
+  font-weight: 400;
+  font-style: normal;
+  src:  local($font-family),
+        url('#{$font-path}/#{$font-family}-Regular.woff2') format('woff2'),
+        url('#{$font-path}/#{$font-family}-Regular.woff') format('woff'),
+        url('#{$font-path}/#{$font-family}-Regular.eot') format('eot');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-family;
+  font-weight: 700;
+  font-style: normal;
+  src:  local($font-family),
+        url('#{$font-path}/#{$font-family}-Bold.woff2') format('woff2'),
+        url('#{$font-path}/#{$font-family}-Bold.woff') format('woff'),
+        url('#{$font-path}/#{$font-family}-Bold.eot') format('eot');
+  font-display: swap;
+}
